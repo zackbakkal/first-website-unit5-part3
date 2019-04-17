@@ -297,93 +297,38 @@
         box-shadow: 0 0 0 0;
     }
 
-    /*
-    * An absolute position and a z-index of 12 for the drop down cart will not push the 
-    * elements below it down.
-    */
-    .showcart {
-        position: absolute;
-        z-index: 1;
-        left: -150px;
-        top: 110px;
-        background-color: #e49012;
-        width: 400px;
-        height: auto;
-        transition: 1s;
-        border: solid black 2px;
-    }
+    /**************
+    * suggestions *
+    **************/
 
     /*
-    * each div represents a row in the drop down cart
+    * 
     */
-    .showcart div {
-        position: relative;
+    #suggestions {
         width: 100%;
         height: auto;
-        margin-top: 5px;
-        margin-bottom: 5px;
+        -webkit-transition: width .3s;
+        transition: width .3s;
+    }
+
+    #suggestions h3 {
+        background-color: #4CAF50;
+        text-align: center;
+    }
+
+    #items {
         display: flex;
     }
 
-    /*
-    * each div has 4 spans representing the item, price, qty and total.
-    */
-    .showcart div span {
+    #items a {
         position: relative;
-        margin-top: 10px;
-        margin-bottom: 10px;
-        padding: 5px;
-        left: 0;
+        width: 50%;
+        float: left;
         flex: 1;
-        text-align: right;
     }
 
-    /*
-    * each first span in each div in the drop down cart
-    */
-    .showcart div span:nth-of-type(1) {
-        text-align: left;
-        font-weight: bold;
-        flex: 2;
-    }
-
-    /*
-    * the first div in the drop down cart. represents the cart header
-    */
-    .showcart div:nth-of-type(1) {
-        font-weight: bold;
-        text-align: center;
-        border: solid black 1px;
-        margin-top: 0;
-    }
-
-    /*
-    * the last div in the drop down cart represents the totals
-    */
-    .showcart div:nth-last-of-type(1) span {
-        flex: 2;
-        font-weight: normal;
-        text-align: right;
-        border: solid black 1px;
-        margin-bottom: 0;
-    }
-
-    /*
-    * the first span in the last div in the drop down cart
-    */
-    .showcart div:nth-last-of-type(1) span:nth-of-type(1):before {
-        float: left;
-        font-weight: bold;
-        content: "Total Qty";
-    }
-
-    /*
-    * the second span in the last div in the drop down cart
-    */
-    .showcart div:nth-last-of-type(1) span:nth-of-type(2):before {
-        float: left;
-        font-weight: bold;
-        content: "Total Price";
+    #items a img {
+        margin: 0;
     }
     
     /**************
@@ -533,7 +478,7 @@
     * sideimg *
     ***********
 
-    /*These images are used in the side of other elements on a page. Given a width of 30%*/
+    /*These images are used on the side of other elements on a page. Given a width of 30%*/
     .sideimg {
 		width: 30%;
     }
@@ -546,6 +491,100 @@
     .description {
 		width: 70%;
     }
+
+    /***********
+    * showcart *
+    ***********/
+
+    /*
+    * An absolute position and a z-index of 12 for the drop down cart will not push the 
+    * elements below it down.
+    */
+    .showcart {
+        position: absolute;
+        z-index: 1;
+        left: -150px;
+        top: 110px;
+        background-color: #e49012;
+        width: 400px;
+        transition: height 1s;
+        box-shadow: 0 5px 20px 0 #888888;
+        transition: 1s;
+        border-width: 5px;
+    }
+
+    /*
+    * each div represents a row in the drop down cart
+    */
+    .showcart div {
+        position: relative;
+        width: 100%;
+        height: auto;
+        margin-top: 5px;
+        display: flex;
+    }
+
+    /*
+    * each div has 4 spans representing the item, price, qty and total.
+    */
+    .showcart div span {
+        position: relative;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        padding: 5px;
+        left: 0;
+        flex: 1;
+        text-align: right;
+    }
+
+    /*
+    * each first span in each div in the drop down cart
+    */
+    .showcart div span:nth-of-type(1) {
+        text-align: left;
+        font-weight: bold;
+        flex: 2;
+    }
+
+    /*
+    * the first div in the drop down cart. represents the cart header
+    */
+    .showcart div:nth-of-type(1) {
+        font-weight: bold;
+        text-align: center;
+        border: solid black 1px;
+        margin-top: 0;
+    }
+
+    /*
+    * the last div in the drop down cart represents the totals
+    */
+    .showcart div:nth-last-of-type(1) span {
+        flex: 2;
+        font-weight: normal;
+        text-align: right;
+        border: solid black 1px;
+        margin-bottom: 0;
+    }
+
+    /*
+    * the first span in the last div in the drop down cart
+    */
+    .showcart div:nth-last-of-type(1) span:nth-of-type(1):before {
+        float: left;
+        font-weight: bold;
+        content: "Total Qty";
+    }
+
+    /*
+    * the second span in the last div in the drop down cart
+    */
+    .showcart div:nth-last-of-type(1) span:nth-of-type(2):before {
+        float: left;
+        font-weight: bold;
+        content: "Total Price";
+    }
+
     
     /**********
     * pointer *
@@ -793,7 +832,7 @@
 
         /*The input types of type submit and reset*/
         form input[type=submit], form input[type=reset] {
-            display: inline;
+            display: inline-block;
             padding: 10px;
             width: 30%;
             font-weight: bold;

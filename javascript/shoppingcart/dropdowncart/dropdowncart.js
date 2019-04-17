@@ -25,9 +25,9 @@ function start() {
     // Retrieve the element from the DOM with the id named menu and
     // set its display attribute in the style to 'none'
     cart = document.getElementById("cart");
-    cart.style.display = "none";
     //cart.style.display = "none";
-
+    cart.style.height = "0";
+    cart.style.width = "0";
     // Add an event listner to the element retrieved above. When the element is clicked
     // call the function named changeLook
     cartIcon.addEventListener("mouseover",
@@ -35,7 +35,12 @@ function start() {
             console.log(cart.style);
             // Remove the display property from the menu style so that it is shown
             // after we click again
-            cart.style.display = "block";
+            //cart.style.display = "block";
+            cart.style.borderStyle = "outset";
+            cart.style.borderColor = "rgb(248, 164, 118)";
+            cart.style.height = "auto";
+            cart.style.width = "400px";
+
             console.log(cart.className);
             // Calls the changeLook function and pass the cartIcon element to it which
             // is represented by the keyword this.
@@ -63,7 +68,11 @@ function showCart() {
             function () {
                 // Calls the resetSandwichBar function to change the menu button to
                 // a sandwich look
-                cart.style.display = "none";
+                //cart.style.display = "none";
+                cart.style.height = "0";
+                cart.style.width = "0";
+                cart.style.borderColor = "white";
+                cart.style.borderStyle = "hidden";
 
                 while (cart.firstElementChild) {
                     cart.removeChild(cart.firstElementChild);
